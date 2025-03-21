@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Редактирование героя</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Редактирование героя</h1>
+        <form method="POST" class="form">
+            <label>Имя:</label>
+            <input type="text" name="name" value="{{ hero.name }}" required>
+
+            <label>Роль:</label>
+            <input type="text" name="role" value="{{ hero.role }}" required>
+
+            <label>Винрейт:</label>
+            <input type="number" name="win_rate" step="0.01" value="{{ hero.win_rate }}" required>
+
+            <button type="submit" class="btn">Сохранить</button>
+        </form>
+        <a href="{{ url_for('index') }}" class="link">Назад</a>
+    </div>
+</body>
+</html>

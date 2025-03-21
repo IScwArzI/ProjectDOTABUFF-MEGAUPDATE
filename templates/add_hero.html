@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Додати героя</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Додати нового героя</h1>
+        <form method="POST" class="form">
+            <label for="name">Ім'я героя:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="role">Роль:</label>
+            <input type="text" id="role" name="role" required>
+
+            <label for="win_rate">Відсоток перемог:</label>
+            <input type="number" step="0.1" id="win_rate" name="win_rate" required>
+
+            <button type="submit" class="btn">Додати</button>
+        </form>
+        <a href="/" class="link">Повернутися до списку героїв</a>
+    </div>
+</body>
+</html>

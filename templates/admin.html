@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Admin Panel</h1>
+<h2>Add Hero</h2>
+<form method="POST" action="{{ url_for('add_hero') }}">
+    <div class="mb-3">
+        <label for="name" class="form-label">Hero Name</label>
+        <input type="text" class="form-control" id="name" name="name" required>
+    </div>
+    <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea class="form-control" id="description" name="description"></textarea>
+    </div>
+    <div class="mb-3">
+        <label for="image_url" class="form-label">Image URL</label>
+        <input type="text" class="form-control" id="image_url" name="image_url" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Add Hero</button>
+</form>
+
+<h2>Heroes List</h2>
+<div class="row">
+    {% for hero in heroes %}
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <img src="{{ hero.image_url }}" class="card-img-top" alt="{{ hero.name }}">
+            <div class="card-body">
+                <h5 class="card-title">{{ hero.name }}</h5>
+                <p class="card-text">{{ hero.description }}</p>
+                <form method="POST" action="{{ url_for('delete_hero', hero_id=hero.id) }}" onsubmit="return confirm('Вы уверены, что хотите удалить этого героя?');">
+                    <button type="submit" class="btn btn-danger">Удалить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

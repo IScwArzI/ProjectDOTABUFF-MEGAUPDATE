@@ -1,0 +1,27 @@
+[
+    {
+        "name": "Anti-Mage",
+        "popularity": 25.4,
+        "win_rate": 50.3
+    },
+    {
+        "name": "Axe",
+        "popularity": 30.1,
+        "win_rate": 52.7
+    },
+    {
+        "name": "Invoker",
+        "popularity": 28.9,
+        "win_rate": 49.5
+    },
+    {
+        "name": "Juggernaut",
+        "popularity": 35.2,
+        "win_rate": 51.0
+    },
+    {
+        "name": "Pudge",
+        "popularity": 40.5,
+        "win_rate": 48.3
+    }
+]
